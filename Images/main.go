@@ -32,7 +32,7 @@ func (i Image) Bounds() image.Rectangle {
 	return image.Rect(0, 0, i.x, i.y)
 }
 func (i Image) At(x, y int) color.Color {
-	r := uint8(x + y)
+	r := uint8(x * y)
 	g := uint8(x ^ y)
 	b := uint8(x + y)
 	//fmt.Println("R:", r, "G:", g, "B:", b)
@@ -40,6 +40,6 @@ func (i Image) At(x, y int) color.Color {
 }
 
 func main() {
-	m := Image{}
+	m := Image{200, 200}
 	pic.ShowImage(m)
 }
