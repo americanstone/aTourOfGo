@@ -48,7 +48,7 @@ func TestDelete(t *testing.T) {
 	}
 	l.DeleteAt(1)
 	v, _ := l.Get(1)
-	if v != 5 {
+	if v != 4 {
 		t.Fatal("value should be 4")
 
 	}
