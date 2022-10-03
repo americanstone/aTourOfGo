@@ -58,7 +58,7 @@ func main() {
 		// 	fmt.Println(<-c)
 		// }
 		//receives values from the channel repeatedly until it is closed.
-		for v:= range c {
+		for v := range c {
 			fmt.Println(v)
 		}
 	}()
