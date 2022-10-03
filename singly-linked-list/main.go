@@ -3,7 +3,10 @@ package main
 /*
 	simple linked list implementation in golang
 */
-import "fmt"
+import (
+	"container/list"
+	"fmt"
+)
 
 type Node[T comparable] struct {
 	val  T
@@ -225,4 +228,12 @@ func main() {
 	fmt.Println("delete value 3")
 	fmt.Println("size: ", l.Size())
 	l.Print()
+
+	al := list.New()
+	al.PushFront(1)
+	al.PushFront(2)
+	al.PushFront(3)
+	for e := al.Front(); e != nil; e = e.Next() {
+		fmt.Println(e.Value)
+	}
 }
