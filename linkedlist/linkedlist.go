@@ -1,10 +1,10 @@
-package main
+package singlylinkedlist
 
+// !!!the package name shold be the folder name
 /*
 	simple linked list implementation in golang
 */
 import (
-	"container/list"
 	"fmt"
 )
 
@@ -121,7 +121,6 @@ func (l *SinglyLinkedList[T]) DeleteAt(i uint) bool {
 	return true
 }
 
-
 func (l *SinglyLinkedList[T]) Get(index uint) (v T, i bool) {
 	var t T
 	if index > l.len-1 {
@@ -176,64 +175,5 @@ func (l *SinglyLinkedList[T]) Traverse(f func(T)) {
 	for i := uint(0); i < l.len; i++ {
 		f(ptr.val)
 		ptr = ptr.next
-	}
-}
-
-func main() {
-	l := SinglyLinkedList[uint]{}
-	l.InsertAtHead(1)
-	l.InsertAtHead(2)
-	l.InsertAtHead(3)
-	l.InsertAtEnd(4)
-	fmt.Println("size: ", l.Size())
-	l.Print()
-	v, _ := l.Get(1)
-
-	fmt.Println("get 1: ", v)
-
-	l.DeleteAt(0)
-	fmt.Println("size: ", l.Size())
-	l.Print()
-	fmt.Println("At certain position value:", l.getAt(2))
-	l.DeleteAt(2)
-	fmt.Println("size: ", l.Size())
-	l.Print()
-	l.DeleteAt(1)
-	fmt.Println("size: ", l.Size())
-	l.Print()
-	l.DeleteVal(2)
-	fmt.Println("size: ", l.Size())
-	l.Print()
-	l.InsertAtHead(1)
-	l.InsertAtHead(2)
-	l.InsertAtHead(3)
-	l.InsertAtHead(1)
-	l.InsertAtHead(2)
-	l.InsertAtHead(3)
-	l.Print()
-	l.DeleteVal(2)
-	fmt.Println("delete value 2")
-	fmt.Println("size: ", l.Size())
-	l.Print()
-	l.DeleteVal(1)
-	fmt.Println("delete value 1")
-	fmt.Println("size: ", l.Size())
-	l.Print()
-	l.DeleteVal(3)
-	fmt.Println("delete value 3")
-	fmt.Println("size: ", l.Size())
-	l.Print()
-
-	l.DeleteVal(2)
-	fmt.Println("delete value 3")
-	fmt.Println("size: ", l.Size())
-	l.Print()
-
-	al := list.New()
-	al.PushFront(1)
-	al.PushFront(2)
-	al.PushFront(3)
-	for e := al.Front(); e != nil; e = e.Next() {
-		fmt.Println(e.Value)
 	}
 }

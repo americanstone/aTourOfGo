@@ -1,0 +1,11 @@
+https://stackoverflow.com/questions/62653485/in-go-does-the-package-name-have-to-be-identical-to-inner-most-directory-name
+
+
+
+Another convention is that the package name is the base name of its source directory; the package in src/encoding/base64 is imported as "encoding/base64" but has name base64, not encoding_base64 and not encodingBase64.
+
+In go, a convention is that a package's name should be equal to the name of its source directory.
+
+single directory contains exactly one package.
+
+in this case package name is singlylinkedlist but the directory name is linkedlist

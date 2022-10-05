@@ -1,11 +1,12 @@
 package main
 
 import (
+	"example.com/linkedlist"
 	"testing"
 )
 
 func TestInsert(t *testing.T) {
-	l := NewSinglyLinkedList[int]()
+	l := linkedList.NewSinglyLinkedList[int]()
 	l.InsertAtHead(1)
 	l.InsertAtEnd(2)
 	l.InsertAt(0, 0)
@@ -27,7 +28,7 @@ func TestInsert(t *testing.T) {
 }
 
 func TestDelete(t *testing.T) {
-	l := NewSinglyLinkedList[int]()
+	l := linkedList.NewSinglyLinkedList[int]()
 	l.InsertAtHead(1)
 	l.InsertAtEnd(2)
 	l.Append(3)
